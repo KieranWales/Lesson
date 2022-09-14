@@ -14,8 +14,6 @@ namespace Lesson
             return Console.ReadLine().ToLower();
         }
 
-
-
         static void Main(string[] args)
         {
             string flavour = Input("What is your favourite pizza?");
