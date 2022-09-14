@@ -8,12 +8,23 @@ namespace Lesson
 {
     class Program
     {
+        // gets input and returns it
         static string Input(string question)
         {
-            Console.WriteLine(question);
+            Print(question, ConsoleColor.DarkRed);
             return Console.ReadLine().ToLower();
         }
 
+        // outputs a string in nice colour
+        static void Print(string statement, ConsoleColor newColour)
+        {
+            ConsoleColor oldColour = Console.ForegroundColor;
+            Console.ForegroundColor = newColour;
+            Console.WriteLine(statement);
+            Console.ForegroundColor = oldColour;
+        }
+
+        // actual code
         static void Main(string[] args)
         {
             string flavour = Input("What is your favourite pizza?");
@@ -22,21 +33,32 @@ namespace Lesson
             {
                 case "cheese and tomato":
                 case "margherita":
-                    Console.WriteLine("Suitable for vegetarians");
+                    Print("Suitable for vegetarians", ConsoleColor.Blue);
                     break;
 
                 case "pepperoni":
                 case "meat feast":
-                    Console.WriteLine("Not suitable for vegetarians");
+                    Print("Not suitable for vegetarians", ConsoleColor.Blue);
                     break;
 
                 case "":
-                    Console.WriteLine("You didn't even type anything");
+                    Print("You didn't even type anything", ConsoleColor.Blue);
                     break;
                 default:
-                    Console.WriteLine("Unknown pizza. May contain meat!");
+                    Print("Unknown pizza. May contain meat!", ConsoleColor.Blue);
                     break;
             }
+
+            string musicGenre = Input("What genre of music is your favourite?".ToLower());
+
+            switch (musicGenre)
+            {
+                default:
+                    Print($"No way, {musicGenre} is my favourite music genre too", ConsoleColor.Blue);
+                        break;
+            }
+
+            
             Console.ReadLine();
         }
     }
