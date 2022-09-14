@@ -11,8 +11,7 @@ namespace Lesson
         static string Input(string question)
         {
             Console.WriteLine(question);
-            string tempAnswer = Console.ReadLine().ToLower();
-            return tempAnswer;
+            return Console.ReadLine().ToLower();
         }
 
 
