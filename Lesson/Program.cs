@@ -8,10 +8,18 @@ namespace Lesson
 {
     class Program
     {
+        static string Input(string question)
+        {
+            Console.WriteLine(question);
+            string tempAnswer = Console.ReadLine().ToLower();
+            return tempAnswer;
+        }
+
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your favourite pizza? ");
-            string flavour = Console.ReadLine().ToLower();
+            string flavour = Input("What is your favourite pizza?");
 
             switch (flavour)
             {
